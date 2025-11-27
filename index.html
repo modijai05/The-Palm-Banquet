@@ -1,475 +1,460 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>The Palm Banquet — Premium Event Venue, Jaipur</title>
-<meta name="description" content="The Palm Banquet — premium venue for weddings, corporate events and private celebrations in Jaipur. Elegant spaces, bespoke catering and professional event support." />
-<meta name="theme-color" content="#004D40" />
-<!-- Open Graph -->
-<meta property="og:title" content="The Palm Banquet — Premium Event Venue, Jaipur">
-<meta property="og:description" content="Elegant spaces, bespoke catering, and professional event management — host your next celebration with The Palm Banquet.">
-<meta property="og:image" content="DSC_7804.JPG">
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Palm Banquet — Premium Event Venue, Jaipur</title>
+  <meta name="description" content="The Palm Banquet — premium venue for weddings, corporate events and private celebrations in Jaipur. Elegant spaces, bespoke catering and professional event support." />
+  <meta name="theme-color" content="#004D40" />
+  <meta property="og:title" content="The Palm Banquet — Premium Event Venue, Jaipur">
+  <meta property="og:description" content="Elegant spaces, bespoke catering, and professional event management — host your next celebration with The Palm Banquet.">
+  <meta property="og:image" content="DSC_7804.JPG">
+  <meta name="twitter:card" content="summary_large_image">
 
-<style>
-:root{
-  --green:#004D40;
-  --gold:#D4AF37;
-  --cream:#F5F5DC;
-  --muted:#6b6b6b;
-  --max-width:1200px;
-  --radius:12px;
-  --shadow-strong:0 14px 40px rgba(0,0,0,0.18);
-  --shadow-soft:0 8px 22px rgba(0,0,0,0.08);
-  --btn-grad: linear-gradient(135deg,#D4AF37 0%, #0f604f 100%);
-  --tap-size:48px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{
-  font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial;
-  background:var(--cream);
-  color:#111;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-/* skip link */
-.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;background:#fff;padding:8px 12px;border-radius:6px;z-index:9999;color:var(--green);box-shadow:0 6px 18px rgba(0,0,0,0.24)}
+  <style>
+    :root{
+      --green:#004D40;
+      --gold:#D4AF37;
+      --cream:#F5F5DC;
+      --muted:#6b6b6b;
+      --max-width:1200px;
+      --radius:12px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.12);
+      --btn-grad: linear-gradient(135deg,#D4AF37 0%, #0f604f 100%);
+      --tap:48px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:"Poppins",system-ui,-apple-system,"Segoe UI",Roboto,Arial; background:var(--cream); color:#111; -webkit-font-smoothing:antialiased}
 
-/* HEADER */
-.site-header{
-  background:var(--green);
-  color:#fff;
-  border-bottom:3px solid var(--gold);
-  position:sticky;
-  top:0;
-  z-index:140;
-  box-shadow:0 6px 18px rgba(0,0,0,0.12);
-}
-.header-inner{
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:8px 16px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+    /* skip link */
+    .skip-link{position:absolute;left:-9999px}
+    .skip-link:focus{position:fixed;left:12px;top:12px;background:#fff;padding:8px 12px;border-radius:6px;color:var(--green);z-index:9999;box-shadow:0 8px 30px rgba(0,0,0,0.18)}
 
-/* Logo + title */
-.logo { display:flex; align-items:center; gap:10px; }
-.logo img{height:86px; width:auto; object-fit:contain; display:block}
-.logo-fallback{display:none}
-.brand-title{
-  font-family:"Playfair Display",serif;
-  font-size:26px;
-  color:var(--gold);
-  font-weight:800;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  text-shadow:0 2px 6px rgba(0,0,0,0.18);
-}
+    /* header */
+    .site-header{background:var(--green); color:#fff; position:sticky;top:0;z-index:200;border-bottom:3px solid var(--gold);box-shadow:0 6px 18px rgba(0,0,0,0.12)}
+    .header-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;gap:12px;padding:8px 16px}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .logo-figure{display:flex;align-items:center;gap:10px}
+    /* logo image will sit above SVG fallback; if image loads it will be shown */
+    .logo-img{height:84px;width:auto;object-fit:contain;display:block}
+    .logo-svg{display:block} /* visible initially; JS hides when PNG loads */
+    .site-title{font-family:"Playfair Display",serif;color:var(--gold);font-weight:800;font-size:24px;letter-spacing:1px;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,0.12)}
+    .nav-wrap{margin-left:auto;display:flex;align-items:center;gap:14px}
 
-/* nav and header actions */
-.nav-wrap{margin-left:auto; display:flex; align-items:center; gap:12px}
-nav.primary{display:flex; gap:12px; align-items:center}
-nav.primary a{color:#fffbd6; text-decoration:none; padding:8px; font-weight:600; border-radius:8px}
-nav.primary a:hover{background:var(--gold); color:var(--green)}
-.header-ctas{display:flex; gap:8px; align-items:center}
-.cta{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;font-weight:700;color:#fff;text-decoration:none;border:2px solid rgba(255,255,255,0.12)}
-.cta.primary{background:var(--gold); color:var(--green); border:none}
-.cta img{height:18px;width:18px}
+    nav.primary{display:flex;gap:14px;align-items:center}
+    nav.primary a{color:#fffbd6;text-decoration:none;font-weight:600;padding:8px;border-radius:8px}
+    nav.primary a:hover{background:var(--gold);color:var(--green)}
+    .menu-btn{display:none;background:transparent;border:none;color:#fff;font-size:26px;cursor:pointer}
 
-/* mobile menu button */
-.menu-btn{display:none;background:transparent;border:none;color:#fff;font-size:26px;cursor:pointer;padding:8px}
+    .header-ctas{display:flex;gap:8px;align-items:center}
+    .cta{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;font-weight:700;color:#fff;text-decoration:none;border:2px solid rgba(255,255,255,0.12)}
+    .cta.primary{background:var(--gold);color:var(--green);border:none}
+    .cta img{width:18px;height:18px}
 
-/* HERO / SLIDESHOW */
-.hero{position:relative;width:100%;height:700px;overflow:hidden}
-.slides{position:absolute;inset:0}
-.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s ease-in-out, transform 8s linear;transform:scale(1.02)}
-.slides img.active{opacity:1; transform:scale(1)}
-.hero-overlay{
-  position:absolute;left:40px;bottom:56px;z-index:6;background:linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.66));
-  color:var(--gold);padding:18px 20px;border-radius:12px;box-shadow:var(--shadow-strong);max-width:680px;border:1px solid rgba(212,175,55,0.12);
-}
-.hero-overlay h1{font-family:"Playfair Display",serif;font-size:34px;margin:0;color:var(--gold);line-height:1.02}
-.hero-overlay p{margin:6px 0 0 0;color:#fff7e6}
-.hero-actions{display:flex;gap:12px;margin-top:12px}
-.btn{padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.btn.gold{background:var(--gold);color:var(--green)}
-.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.12)}
+    /* hero */
+    .hero{position:relative;width:100%;height:85vh;max-height:920px;overflow:hidden;display:block}
+    .slides{position:absolute;inset:0}
+    .slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;will-change:opacity;transform:translateZ(0)}
+    .slides img.active{opacity:1}
+    .hero-overlay{
+      position:absolute;left:28px;bottom:28px;z-index:6;background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.64));color:var(--gold);padding:18px 20px;border-radius:12px;max-width:720px;border:1px solid rgba(212,175,55,0.10)
+    }
+    .hero-overlay h1{font-family:"Playfair Display",serif;font-size:34px;margin:0;line-height:1;color:var(--gold)}
+    .hero-overlay p{margin:8px 0 0;color:#fffbd6}
+    .hero-actions{display:flex;gap:12px;margin-top:12px}
+    .btn{padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+    .btn.gold{background:var(--gold);color:var(--green)}
+    .btn.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.12)}
 
-/* content */
-.container{max-width:var(--max-width);margin:28px auto;padding:0 16px}
-.section-title{text-align:center;color:var(--green);font-size:24px;margin-bottom:14px;font-weight:700}
-.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-soft)}
-.card img{width:100%;height:200px;object-fit:cover}
-.card .card-body{padding:12px;text-align:center;color:var(--muted);font-weight:600}
+    /* container & sections */
+    .container{max-width:var(--max-width);margin:28px auto;padding:0 16px}
+    .section-title{text-align:center;color:var(--green);font-size:26px;margin-bottom:18px;font-weight:700}
 
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.service{background:#fff;padding:14px;border-radius:12px;box-shadow:var(--shadow-soft);text-align:center}
-.service img{width:100%;height:160px;object-fit:cover;border-radius:8px}
-.service h3{margin:10px 0;color:var(--gold)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+    .card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--shadow)}
+    .card img{height:180px;object-fit:cover}
+    .card .card-body{padding:12px;text-align:center;color:var(--muted);font-weight:600}
 
-.contact-card{background:#fff;padding:16px;border-radius:12px;box-shadow:var(--shadow-soft);display:flex;flex-direction:column;gap:10px}
-.contact-card p{margin:6px 0;font-weight:700}
-.map-wrap{flex:1;border-radius:12px;overflow:hidden;height:420px}
-.map-wrap iframe{width:100%;height:100%;border:0;display:block}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+    .service{background:#fff;padding:12px;border-radius:10px;box-shadow:var(--shadow);text-align:center}
+    .service img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+    .service h3{margin:10px 0;color:var(--gold)}
 
-/* floating Book Now */
-.floating{position:fixed;right:14px;bottom:14px;z-index:130}
-.floating a{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;font-weight:800;color:#fff;text-decoration:none;background:var(--btn-grad);box-shadow:var(--shadow-strong);font-size:15px;min-height:var(--tap-size);min-width:120px;justify-content:center}
+    .contact-card{background:#fff;padding:14px;border-radius:12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+    .contact-card p{margin:6px 0;font-weight:700}
+    .map-wrap{flex:1;border-radius:10px;overflow:hidden;height:420px}
+    .map-wrap iframe{width:100%;height:100%;border:0;display:block}
 
-/* lightbox & modal */
-.lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;z-index:220;padding:12px}
-.lightbox.active{display:flex}
-.lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:var(--shadow-strong)}
-.lightbox-close{position:fixed;top:18px;right:18px;color:#fff;font-size:32px;font-weight:700;cursor:pointer;z-index:230}
+    /* floating book */
+    .floating{position:fixed;right:14px;bottom:14px;z-index:250}
+    .floating a{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:12px;font-weight:800;color:#fff;text-decoration:none;background:var(--btn-grad);box-shadow:var(--shadow);min-height:var(--tap);min-width:120px;justify-content:center}
 
-.modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:230;padding:12px}
-.modal.active{display:flex}
-.modal-content{background:#fff;padding:18px;border-radius:12px;width:100%;max-width:480px;box-shadow:var(--shadow-strong)}
-.modal-content input,.modal-content select,.modal-content textarea{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd;font-family:inherit}
-.modal-actions{display:flex;gap:8px;justify-content:flex-end}
-.btn-modal{padding:10px 12px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
-.btn-modal.cancel{background:#eee}
-.btn-modal.whatsapp{background:var(--gold);color:var(--green)}
+    /* lightbox/modal */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;z-index:400;padding:12px}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:96%;max-height:96%;border-radius:10px;box-shadow:0 14px 40px rgba(0,0,0,0.4)}
+    .lightbox-close{position:fixed;top:18px;right:18px;color:#fff;font-size:28px;font-weight:700;cursor:pointer;z-index:410}
 
-.site-footer{background:var(--green);color:#F5F5DC;text-align:center;padding:18px 12px;margin-top:22px}
-.site-footer a{color:#fffbd6;text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin:0 8px;font-weight:600}
-.site-footer a img{width:20px;height:20px}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:420;padding:12px}
+    .modal.active{display:flex}
+    .modal-content{background:#fff;padding:16px;border-radius:12px;width:100%;max-width:460px;box-shadow:var(--shadow)}
+    .modal-content input,.modal-content select,.modal-content textarea{width:100%;padding:10px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd}
+    .modal-actions{display:flex;gap:8px;justify-content:flex-end}
+    .btn-modal{padding:10px 12px;border-radius:8px;border:none;font-weight:700;cursor:pointer}
+    .btn-modal.cancel{background:#eee}
+    .btn-modal.whatsapp{background:var(--gold);color:var(--green)}
 
-.consent{position:fixed;left:12px;right:12px;bottom:18px;background:rgba(255,255,255,0.98);border-radius:12px;box-shadow:var(--shadow-strong);padding:12px 14px;display:none;gap:12px;align-items:center;z-index:1000;max-width:calc(var(--max-width) - 40px);margin:0 auto}
-.consent p{margin:0;color:#222;font-size:14px}
-.consent .consent-actions{margin-left:auto;display:flex;gap:8px}
+    .site-footer{background:var(--green);color:#F5F5DC;text-align:center;padding:18px;margin-top:24px}
+    .site-footer a{color:#fffbd6;text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin:0 8px;font-weight:600}
+    .site-footer a img{width:20px;height:20px}
 
-.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+    .consent{position:fixed;left:12px;right:12px;bottom:18px;background:rgba(255,255,255,0.98);border-radius:12px;padding:12px 14px;display:none;gap:12px;align-items:center;z-index:500;max-width:calc(var(--max-width) - 40px);margin:0 auto;box-shadow:var(--shadow)}
+    .consent p{margin:0;color:#222}
+    .consent .consent-actions{margin-left:auto;display:flex;gap:8px}
 
-/* responsive adjustments for mobile */
-@media (max-width:900px){
-  .header-inner{padding:8px 12px}
-  .logo img{height:76px}
-  .brand-title{font-size:20px}
-  .hero{height:540px}
-  .hero-overlay{left:16px;right:16px;bottom:20px;padding:14px}
-  .hero-overlay h1{font-size:22px}
-  .hero-overlay p{font-size:14px}
-  .btn{padding:10px 12px;font-size:14px}
-  .map-wrap{height:360px}
-  .floating a{min-width:110px;font-size:14px}
-  .gallery-grid .card img{height:180px}
-  .service img{height:140px}
-  .container{margin:20px auto;padding:0 12px}
-  .menu-btn{display:inline-block}
-  nav.primary{display:none}
-  .logo img{height:64px}
-}
+    /* responsive */
+    @media (max-width:1024px){
+      .hero{height:62vh}
+      .logo-img{height:72px}
+      .site-title{font-size:20px}
+      nav.primary{display:none}
+      .menu-btn{display:inline-block}
+    }
+    @media (max-width:640px){
+      .hero{height:100vh;max-height:none}
+      .hero-overlay{left:16px;right:16px;bottom:16px;padding:14px}
+      .hero-overlay h1{font-size:22px}
+      .brand .site-title{display:none} /* reduce header vertical space */
+      .logo-img{height:56px}
+      .map-wrap{height:320px}
+      .card img{height:160px}
+      .service img{height:120px}
+      .floating a{min-width:110px;padding:10px 12px}
+    }
 
-@media (max-width:480px){
-  .hero{height:420px}
-  .hero-overlay{left:14px;right:14px;bottom:16px;padding:12px}
-  .hero-overlay h1{font-size:20px}
-  .brand-title{display:none} /* hide redundant text on very small screens */
-  .logo img{height:58px}
-  .map-wrap{height:300px}
-}
-a:focus,button:focus,input:focus,select:focus,textarea:focus {outline:3px solid rgba(212,175,55,0.25); outline-offset:2px}
-</style>
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .slides img { transition: none !important; }
+    }
+
+    a:focus,button:focus,input:focus,select:focus,textarea:focus{outline:3px solid rgba(212,175,55,0.25);outline-offset:2px}
+  </style>
 </head>
 <body>
-<a class="skip-link" href="#home">Skip to content</a>
+  <a class="skip-link" href="#home">Skip to content</a>
 
-<!-- HEADER -->
-<header class="site-header" role="banner">
-  <div class="header-inner" role="navigation" aria-label="Main">
-    <div style="display:flex;align-items:center;gap:8px">
-      <div class="logo" aria-hidden="false" style="align-items:center;">
-        <img id="siteLogo" src="Palm_logo.PNG" alt="The Palm Banquet logo — Palm_logo.PNG" loading="lazy">
-        <div id="logoFallback" class="logo-fallback" style="display:none" aria-hidden="true">
-          <!-- simple SVG fallback -->
-          <svg width="200" height="70" viewBox="0 0 200 70" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Palm Banquet">
-            <text x="0" y="34" font-family="Playfair Display, serif" font-size="24" fill="#D4AF37" font-weight="700">THE PALM</text>
-            <text x="0" y="58" font-family="Playfair Display, serif" font-size="18" fill="#D4AF37" font-weight="700">BANQUET</text>
-          </svg>
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner" role="navigation" aria-label="Main">
+      <div class="brand" style="min-width:0">
+        <div class="logo-figure" style="min-width:0">
+          <!-- Inline SVG fallback logo (visible by default). PNG will load on top if available and then JS hides SVG -->
+          <div id="svgLogo" class="logo-svg" aria-hidden="true" style="display:block">
+            <svg width="160" height="64" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Palm Banquet">
+              <rect width="100%" height="100%" fill="transparent"/>
+              <text x="0" y="38" font-family="Playfair Display, serif" font-size="32" fill="#D4AF37" font-weight="700">THE PALM</text>
+              <text x="0" y="72" font-family="Playfair Display, serif" font-size="24" fill="#D4AF37" font-weight="700">BANQUET</text>
+            </svg>
+          </div>
+
+          <!-- Attempt to load user PNG logo (case-sensitive). JS will hide SVG if PNG loads -->
+          <img id="pngLogo" class="logo-img" src="Palm_logo.PNG" alt="The Palm Banquet logo" style="position:relative;left:0;top:0;" loading="lazy" onerror="this.dataset.failed='1';" />
+        </div>
+
+        <div class="site-title" aria-hidden="true">THE PALM BANQUET</div>
+      </div>
+
+      <div class="nav-wrap">
+        <nav class="primary" aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+
+        <div class="header-ctas">
+          <a class="cta" href="tel:+919462015450" aria-label="Call us">
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="">Call
+          </a>
+          <a class="cta primary" href="https://wa.me/919462015450" aria-label="WhatsApp" target="_blank" rel="noopener">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">WhatsApp
+          </a>
         </div>
       </div>
-      <div class="brand-title" aria-hidden="true">THE PALM BANQUET</div>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen sliding nav -->
+  <nav id="mobileNav" aria-hidden="true" style="display:none;position:fixed;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.96), rgba(0,0,0,0.98));z-index:400;padding:28px;">
+    <button id="mobileClose" aria-label="Close menu" style="background:transparent;border:none;color:#fff;font-size:34px;position:absolute;right:18px;top:18px">×</button>
+    <div style="margin-top:48px; display:flex;flex-direction:column;gap:18px">
+      <a href="#home" style="color:#fff;font-size:22px;text-decoration:none;font-weight:700">Home</a>
+      <a href="#gallery" style="color:#fff;font-size:22px;text-decoration:none;font-weight:700">Gallery</a>
+      <a href="#services" style="color:#fff;font-size:22px;text-decoration:none;font-weight:700">Services</a>
+      <a href="#contact" style="color:#fff;font-size:22px;text-decoration:none;font-weight:700">Contact</a>
+      <a href="tel:+919462015450" style="color:#fff;font-size:18px;text-decoration:none;font-weight:700;margin-top:12px">Call: +91 94620 15450</a>
+      <a href="https://wa.me/919462015450" style="color:#fff;font-size:18px;text-decoration:none;font-weight:700">WhatsApp Us</a>
+    </div>
+  </nav>
+
+  <!-- HERO / SLIDESHOW -->
+  <main id="home" class="hero" role="main" tabindex="-1">
+    <div class="slides" aria-hidden="false">
+      <img src="DSC_7804.JPG" alt="Banquet wide view" class="active" loading="lazy">
+      <img src="DSC_7803.JPG" alt="Stage and seating" loading="lazy">
+      <img src="DSC_7800.JPG" alt="Decor and setup" loading="lazy">
+      <img src="DSC_7801.JPG" alt="Lighting and ambience" loading="lazy">
     </div>
 
-    <div class="nav-wrap">
-      <nav class="primary" aria-label="Primary navigation">
-        <a href="#home">Home</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <div class="hero-overlay" role="region" aria-live="polite">
+      <h1 id="heroTitle">Memories Built With Care</h1>
+      <p id="heroSub">Elegant spaces, bespoke catering and attentive service for weddings, corporate events and private celebrations.</p>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="hero-actions">
+        <a class="btn gold" id="openBookBtn">Book Now</a>
+        <a class="btn ghost" href="#contact">Get Directions</a>
+      </div>
+    </div>
+  </main>
 
-      <div class="header-ctas" aria-hidden="false">
-        <a class="cta" href="tel:+919462015450" aria-label="Call us"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="">Call</a>
-        <a class="cta primary" href="https://wa.me/919462015450" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">WhatsApp</a>
+  <!-- GALLERY -->
+  <section class="container" id="gallery" aria-labelledby="galleryTitle">
+    <h2 id="galleryTitle" class="section-title">Venue Highlights</h2>
+    <div class="gallery-grid">
+      <div class="card"><img src="DSC_7804.JPG" alt="Grand hall view" loading="lazy"><div class="card-body">Grand hall with modern lighting and premium ambience</div></div>
+      <div class="card"><img src="DSC_7803.JPG" alt="Stage setup" loading="lazy"><div class="card-body">Stage setups tailored for weddings and ceremonies</div></div>
+      <div class="card"><img src="DSC_7801.JPG" alt="Decor" loading="lazy"><div class="card-body">Bespoke decoration themes and premium florals</div></div>
+      <div class="card"><img src="DSC_7800.JPG" alt="Dining" loading="lazy"><div class="card-body">Buffet & plated dining options with expert catering</div></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="container" id="services" aria-labelledby="servicesTitle">
+    <h2 id="servicesTitle" class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service"><img src="DSC_7804.JPG" alt="Coordination" loading="lazy"><h3>Event Coordination</h3><p>End-to-end planning and on-site management so you can relax and enjoy.</p></div>
+      <div class="service"><img src="DSC_7803.JPG" alt="Decor" loading="lazy"><h3>Decor & Theming</h3><p>Custom themes and premium décor crafted to your taste and budget.</p></div>
+      <div class="service"><img src="DSC_7801.JPG" alt="Catering" loading="lazy"><h3>Catering</h3><p>Multi-cuisine menus with tasting sessions and flexible packages.</p></div>
+      <div class="service"><img src="DSC_7800.JPG" alt="Lighting" loading="lazy"><h3>Lighting & AV</h3><p>Professional sound, lighting and visual systems for every event mood.</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="container" id="contact" aria-labelledby="contactTitle">
+    <h2 id="contactTitle" class="section-title">Get in Touch</h2>
+    <div class="contact-card">
+      <p><strong>Address:</strong> Plot No. 68/2, Near Mahatma Gandhi Hospital, Goner Road, Opp. Chokhi Dhani, Sitapura, Jaipur</p>
+      <p><strong>Phone:</strong> <a href="tel:+919462015450">+91 94620 15450</a></p>
+      <p><strong>Alternate:</strong> <a href="tel:+919414071245">+91 94140 71245</a></p>
+
+      <div class="map-wrap">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.3065359303155!2d75.83902447596803!3d26.766497066357736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc9f5bf7de593%3A0x3631a1e1ac757557!2sThe%20Palm%20Banquet%20by%20The%20South%20WaterPark!5e0!3m2!1sen!2sin!4v1764168177290!5m2!1sen!2sin" 
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">×</button>
+    <img id="lightboxImg" src="" alt="Expanded image">
+  </div>
+
+  <!-- booking modal -->
+  <div class="modal" id="bookingModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <h2>Quick Enquiry</h2>
+      <input id="b_name" type="text" placeholder="Your Name" />
+      <select id="b_event"><option value="" disabled selected>Event Type (Wedding, Reception...)</option><option>Wedding</option><option>Reception</option><option>Corporate</option><option>Birthday</option><option>Other</option></select>
+      <input id="b_date" type="date" />
+      <input id="b_guests" type="number" placeholder="Number of Guests" />
+      <textarea id="b_msg" rows="3" placeholder="Any special requirements or notes"></textarea>
+      <div class="modal-actions">
+        <button class="btn-modal cancel" id="modalCancel">Cancel</button>
+        <button class="btn-modal whatsapp" id="modalSend">Send via WhatsApp</button>
       </div>
     </div>
   </div>
-</header>
 
-<!-- mobile slide-in menu -->
-<nav id="mobileNav" aria-hidden="true" style="display:none;position:fixed;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.95),rgba(0,0,0,0.98));z-index:220;padding:28px;">
-  <button id="mobileClose" aria-label="Close menu" style="background:transparent;border:none;color:#fff;font-size:30px;position:absolute;right:18px;top:18px">×</button>
-  <div style="margin-top:48px;display:flex;flex-direction:column;gap:18px;align-items:flex-start">
-    <a href="#home" style="color:#fff;font-size:20px;text-decoration:none;font-weight:700">Home</a>
-    <a href="#gallery" style="color:#fff;font-size:20px;text-decoration:none;font-weight:700">Gallery</a>
-    <a href="#services" style="color:#fff;font-size:20px;text-decoration:none;font-weight:700">Services</a>
-    <a href="#contact" style="color:#fff;font-size:20px;text-decoration:none;font-weight:700">Contact</a>
-    <a href="tel:+919462015450" style="color:#fff;font-size:18px;text-decoration:none;font-weight:700;margin-top:14px">Call: +91 94620 15450</a>
-    <a href="https://wa.me/919462015450" style="color:#fff;font-size:18px;text-decoration:none;font-weight:700">WhatsApp Us</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<main id="home" class="hero" role="main" tabindex="-1">
-  <div class="slides" aria-hidden="false">
-    <img src="DSC_7804.JPG" alt="Banquet wide view" class="active" loading="lazy">
-    <img src="DSC_7803.JPG" alt="Stage and seating" loading="lazy">
-    <img src="DSC_7800.JPG" alt="Decor and setup" loading="lazy">
-    <img src="DSC_7801.JPG" alt="Lighting and ambience" loading="lazy">
+  <!-- floating book now -->
+  <div class="floating">
+    <a id="floatBook" href="javascript:void(0)" title="Book Now">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Book Now
+    </a>
   </div>
 
-  <div class="hero-overlay" role="region" aria-live="polite">
-    <h1 id="heroTitle">Memories Built With Care</h1>
-    <p id="heroSub">Elegant spaces, bespoke catering and attentive service for weddings, corporate events and private celebrations.</p>
+  <!-- footer -->
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 The Palm Banquet. All rights reserved.</p>
+    <div class="social" aria-label="Social links">
+      <a href="https://www.facebook.com/thesouthwaterparkpalmbanquet/" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="">Facebook</a>
+      <a href="https://www.instagram.com/thesouthwaterpark_palmbanquet/" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="">Instagram</a>
+      <a href="https://wa.me/919462015450" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">WhatsApp</a>
+      <a href="https://g.co/kgs/wb7zAzh" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="">Google</a>
+    </div>
+  </footer>
 
-    <div class="hero-actions">
-      <a class="btn gold" id="openBookBtn">Book Now</a>
-      <a class="btn ghost" href="#contact">Get Directions</a>
+  <!-- consent -->
+  <div class="consent" id="consentBanner" style="display:none">
+    <div><p><strong>Privacy & analytics</strong><br>We use analytics to improve this site. Accept to enable Google Analytics. You can still contact us via WhatsApp — no email is stored.</p></div>
+    <div class="consent-actions">
+      <button id="consentReject" style="background:#eee;padding:8px 12px;border-radius:8px">Reject</button>
+      <button id="consentAccept" style="background:var(--gold);color:var(--green);padding:8px 12px;border-radius:8px">Accept</button>
     </div>
   </div>
-</main>
 
-<!-- GALLERY -->
-<section class="container" id="gallery" aria-labelledby="galleryTitle">
-  <h2 id="galleryTitle" class="section-title">Venue Highlights</h2>
+  <!-- scripts -->
+  <script>
+    // ---------- GA (consent-based) ----------
+    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // replace to enable
+    const consentKey = 'palm_consent';
+    const consentBanner = document.getElementById('consentBanner');
+    const savedConsent = localStorage.getItem(consentKey);
+    function showConsentIfNeeded(){
+      if(savedConsent === 'yes') loadGA();
+      else if(savedConsent === 'no') return;
+      else consentBanner.style.display='flex';
+    }
+    document.getElementById('consentAccept').addEventListener('click', ()=>{ localStorage.setItem(consentKey,'yes'); consentBanner.style.display='none'; loadGA(); });
+    document.getElementById('consentReject').addEventListener('click', ()=>{ localStorage.setItem(consentKey,'no'); consentBanner.style.display='none'; });
 
-  <div class="gallery-grid" role="list">
-    <div class="card" role="listitem"><img src="DSC_7804.JPG" alt="Grand hall view" loading="lazy"><div class="card-body">Grand hall with modern lighting and premium ambience</div></div>
-    <div class="card" role="listitem"><img src="DSC_7803.JPG" alt="Stage setup" loading="lazy"><div class="card-body">Stage setups tailored for weddings and ceremonies</div></div>
-    <div class="card" role="listitem"><img src="DSC_7801.JPG" alt="Decor" loading="lazy"><div class="card-body">Bespoke decoration themes and premium florals</div></div>
-    <div class="card" role="listitem"><img src="DSC_7800.JPG" alt="Dining" loading="lazy"><div class="card-body">Buffet & plated dining options with expert catering</div></div>
-  </div>
-</section>
+    function loadGA(){
+      if(!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return;
+      if(window.gaLoaded) return;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID, { 'anonymize_ip': true });
+      const s=document.createElement('script'); s.src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`; s.async=true; document.head.appendChild(s);
+      window.gaLoaded = true;
+    }
+    showConsentIfNeeded();
 
-<!-- SERVICES -->
-<section class="container" id="services" aria-labelledby="servicesTitle">
-  <h2 id="servicesTitle" class="section-title">Our Services</h2>
+    // ---------- slideshow (simple, efficient) ----------
+    const slides = document.querySelectorAll('.slides img');
+    const captions = [
+      {title:'Memories Built With Care', sub:'Elegant spaces, bespoke catering and attentive service.'},
+      {title:'Atmosphere & Excellence', sub:'Custom lighting and premium AV.'},
+      {title:'Culinary Experiences', sub:'Cuisine crafted by experienced chefs.'},
+      {title:'Events Handled, Memories Delivered', sub:'Reliable planning and execution.'}
+    ];
+    let si = 0, INTERVAL = 4500;
+    if(slides.length){
+      slides.forEach((s,i)=> s.classList.toggle('active', i===0));
+      setInterval(()=>{
+        slides[si].classList.remove('active');
+        si = (si + 1) % slides.length;
+        slides[si].classList.add('active');
+        // update captions if present
+        const h = document.getElementById('heroTitle'), p = document.getElementById('heroSub');
+        if(h && p && captions[si]){ h.textContent = captions[si].title; p.textContent = captions[si].sub; }
+      }, INTERVAL);
+    }
 
-  <div class="services-grid" role="list">
-    <div class="service" role="listitem"><img src="DSC_7804.JPG" alt="Coordination" loading="lazy"><h3>Event Coordination</h3><p>End-to-end planning and on-site management so you can relax and enjoy.</p></div>
-    <div class="service" role="listitem"><img src="DSC_7803.JPG" alt="Decor" loading="lazy"><h3>Decor & Theming</h3><p>Custom themes and premium décor crafted to your taste and budget.</p></div>
-    <div class="service" role="listitem"><img src="DSC_7801.JPG" alt="Catering" loading="lazy"><h3>Catering</h3><p>Multi-cuisine menus with tasting sessions and flexible packages.</p></div>
-    <div class="service" role="listitem"><img src="DSC_7800.JPG" alt="Lighting" loading="lazy"><h3>Lighting & AV</h3><p>Professional sound, lighting and visual systems for every event mood.</p></div>
-  </div>
-</section>
+    // ---------- lightbox ----------
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lbClose = document.getElementById('lbClose');
+    document.querySelectorAll('.gallery-grid img, .service img, .card img').forEach(img=>{
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', ()=> {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active'); lightbox.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+      });
+    });
+    function closeLightbox(){ lightbox.classList.remove('active'); lightbox.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e)=> { if(e.target === lightbox) closeLightbox(); });
 
-<!-- CONTACT -->
-<section class="container" id="contact" aria-labelledby="contactTitle">
-  <h2 id="contactTitle" class="section-title">Get in Touch</h2>
+    // ---------- booking modal -> whatsapp ----------
+    const bookingModal = document.getElementById('bookingModal');
+    const openBookBtn = document.getElementById('openBookBtn');
+    const floatBook = document.getElementById('floatBook');
+    const modalCancel = document.getElementById('modalCancel');
+    const modalSend = document.getElementById('modalSend');
+    function openModal(){ bookingModal.classList.add('active'); bookingModal.setAttribute('aria-hidden','false'); const f = bookingModal.querySelector('input,select,textarea'); if(f) f.focus(); document.body.style.overflow='hidden'; }
+    function closeModal(){ bookingModal.classList.remove('active'); bookingModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    openBookBtn && openBookBtn.addEventListener('click', openModal);
+    floatBook && floatBook.addEventListener('click', openModal);
+    modalCancel && modalCancel.addEventListener('click', closeModal);
+    modalSend && modalSend.addEventListener('click', ()=> {
+      const name = encodeURIComponent(document.getElementById('b_name').value || '—');
+      const ev = encodeURIComponent(document.getElementById('b_event').value || '—');
+      const date = encodeURIComponent(document.getElementById('b_date').value || '—');
+      const guests = encodeURIComponent(document.getElementById('b_guests').value || '—');
+      const msg = encodeURIComponent(document.getElementById('b_msg').value || '—');
+      const text = `New Booking Enquiry%0AName: ${name}%0AEvent: ${ev}%0ADate: ${date}%0AGuests: ${guests}%0ANotes: ${msg}`;
+      const phone = '919462015450';
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    });
 
-  <div class="contact-card" role="region">
-    <p><strong>Address:</strong> Plot No. 68/2, Near Mahatma Gandhi Hospital, Goner Road, Opp. Chokhi Dhani, Sitapura, Jaipur</p>
-    <p><strong>Phone:</strong> <a href="tel:+919462015450">+91 94620 15450</a></p>
-    <p><strong>Alternate:</strong> <a href="tel:+919414071245">+91 94140 71245</a></p>
+    // ---------- mobile nav ----------
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileClose = document.getElementById('mobileClose');
+    if(menuBtn){
+      menuBtn.addEventListener('click', ()=> { mobileNav.style.display='block'; mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); });
+    }
+    if(mobileClose){
+      mobileClose.addEventListener('click', ()=> { mobileNav.style.display='none'; mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); });
+    }
+    mobileNav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> { mobileNav.style.display='none'; menuBtn && menuBtn.setAttribute('aria-expanded','false'); }));
 
-    <div class="map-wrap" aria-hidden="false">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.3065359303155!2d75.83902447596803!3d26.766497066357736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc9f5bf7de593%3A0x3631a1e1ac757557!2sThe%20Palm%20Banquet%20by%20The%20South%20WaterPark!5e0!3m2!1sen!2sin!4v1764168177290!5m2!1sen!2sin" 
-        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</section>
+    // ---------- logo fallback (PNG over SVG) ----------
+    (function(){
+      const png = document.getElementById('pngLogo');
+      const svg = document.getElementById('svgLogo');
+      if(!png) return;
+      // If PNG loads successfully, hide SVG; if it errors try common variants then keep SVG
+      let tried=0;
+      const variants = ['Palm_logo.PNG','Palm_logo.png','palm_logo.PNG','palm_logo.png','Palm-Logo.PNG','PalmLogo.PNG','logo.png','logo.PNG'];
+      png.addEventListener('error', function next(){
+        tried++;
+        if(tried < variants.length){
+          png.src = variants[tried];
+          return;
+        }
+        // all failed - hide png and keep svg visible
+        png.style.display = 'none';
+        svg.style.display = 'block';
+        png.removeEventListener('error', next);
+      });
+      png.addEventListener('load', ()=> {
+        // show PNG and hide SVG
+        png.style.display = 'block';
+        svg.style.display = 'none';
+      });
+    })();
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="lightbox-close" id="lbClose" aria-label="Close">×</button>
-  <img id="lightboxImg" src="" alt="Expanded image">
-</div>
+    // ---------- anchors smooth scroll ----------
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href && href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
 
-<!-- BOOKING MODAL -->
-<div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="modal-content" role="document">
-    <h2>Quick Enquiry</h2>
-    <input id="b_name" type="text" placeholder="Your Name" />
-    <select id="b_event" aria-label="Event type">
-      <option value="" disabled selected>Event Type (Wedding, Reception...)</option>
-      <option>Wedding</option>
-      <option>Reception</option>
-      <option>Corporate</option>
-      <option>Birthday</option>
-      <option>Other</option>
-    </select>
-    <input id="b_date" type="date" aria-label="Event date" />
-    <input id="b_guests" type="number" placeholder="Number of Guests" />
-    <textarea id="b_msg" rows="3" placeholder="Any special requirements or notes"></textarea>
-
-    <div class="modal-actions">
-      <button class="btn-modal cancel" id="modalCancel">Cancel</button>
-      <button class="btn-modal whatsapp" id="modalSend">Send via WhatsApp</button>
-    </div>
-  </div>
-</div>
-
-<!-- FLOATING Book Now only -->
-<div class="floating" aria-hidden="false">
-  <a id="floatBook" href="javascript:void(0)" title="Book Now">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="filter:drop-shadow(0 4px 8px rgba(0,0,0,0.2))">
-      <path d="M12 2v20M2 12h20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    Book Now
-  </a>
-</div>
-
-<!-- FOOTER -->
-<footer class="site-footer" role="contentinfo">
-  <p>&copy; 2026 The Palm Banquet. All rights reserved.</p>
-  <div class="social" aria-label="Social links">
-    <a href="https://www.facebook.com/thesouthwaterparkpalmbanquet/" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="">Facebook</a>
-    <a href="https://www.instagram.com/thesouthwaterpark_palmbanquet/" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="">Instagram</a>
-    <a href="https://wa.me/919462015450" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">WhatsApp</a>
-    <a href="https://g.co/kgs/wb7zAzh" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="">Google</a>
-  </div>
-</footer>
-
-<!-- Consent banner -->
-<div class="consent" id="consentBanner" style="display:none" role="region" aria-label="Cookie consent">
-  <div><p><strong>Privacy & analytics</strong><br>We use analytics to improve this site. Accept to enable Google Analytics. You can still contact us via WhatsApp — no email is stored.</p></div>
-  <div class="consent-actions">
-    <button class="btn-small" id="consentReject" style="background:#eee;padding:8px 12px;border-radius:8px">Reject</button>
-    <button class="btn-small" id="consentAccept" style="background:var(--gold);color:var(--green);padding:8px 12px;border-radius:8px">Accept</button>
-  </div>
-</div>
-
-<!-- SCRIPTS -->
-<script>
-/* --------- Config: Replace with your GA4 ID to enable analytics --------- */
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
-
-/* Consent banner handling */
-const consentKey = 'palm_consent';
-const consentBanner = document.getElementById('consentBanner');
-const savedConsent = localStorage.getItem(consentKey);
-function showConsentIfNeeded(){ if(savedConsent === 'yes'){ loadGA(); } else if(savedConsent === 'no'){ } else consentBanner.style.display='flex'; }
-document.getElementById('consentAccept').addEventListener('click', ()=>{ localStorage.setItem(consentKey,'yes'); consentBanner.style.display='none'; loadGA(); });
-document.getElementById('consentReject').addEventListener('click', ()=>{ localStorage.setItem(consentKey,'no'); consentBanner.style.display='none'; });
-function loadGA(){ if(!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === 'G-XXXXXXXXXX') return; if(window.gaLoaded) return; window.dataLayer = window.dataLayer || []; function gtag(){ dataLayer.push(arguments); } window.gtag = gtag; gtag('js', new Date()); gtag('config', GA_MEASUREMENT_ID, { 'anonymize_ip': true }); const s=document.createElement('script'); s.src=`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`; s.async=true; document.head.appendChild(s); window.gaLoaded=true; }
-showConsentIfNeeded();
-
-/* ---------- Slides & captions ---------- */
-const slides = document.querySelectorAll('.slides img');
-const heroTitle = document.getElementById('heroTitle');
-const heroSub = document.getElementById('heroSub') || document.querySelector('.hero-overlay p');
-const captions = [
-  {title:'Memories Built With Care', sub:'Elegant spaces, bespoke catering and attentive service for your special day.'},
-  {title:'Atmosphere & Excellence', sub:'Custom lighting, premium AV and tailored décor packages.'},
-  {title:'Culinary Experiences', sub:'Cuisine crafted by experienced chefs to delight every guest.'},
-  {title:'We Handle The Details', sub:'From planning to execution — reliable, experienced event teams.'}
-];
-let idx = 0, INTERVAL = 4200;
-if(slides.length){
-  slides.forEach((s,i)=> s.classList.toggle('active', i===0));
-  setInterval(()=>{
-    slides[idx].classList.remove('active');
-    idx = (idx + 1) % slides.length;
-    slides[idx].classList.add('active');
-    if(captions[idx]){ heroTitle.textContent = captions[idx].title; if(heroSub) heroSub.textContent = captions[idx].sub; }
-  }, INTERVAL);
-}
-
-/* ---------- Lightbox ---------- */
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const lbClose = document.getElementById('lbClose');
-document.querySelectorAll('.gallery-grid img, .services-grid img, .card img, .service img').forEach(img=>{
-  img.addEventListener('click', ()=> {
-    lightboxImg.src = img.src;
-    lightbox.classList.add('active');
-    lightbox.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden'; // prevent background scroll on mobile
-  });
-});
-function closeLightbox(){ lightbox.classList.remove('active'); lightbox.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
-lbClose.addEventListener('click', closeLightbox);
-lightbox.addEventListener('click', (e)=> { if(e.target === lightbox) closeLightbox(); });
-
-/* ---------- Booking modal (WhatsApp) ---------- */
-const bookingModal = document.getElementById('bookingModal');
-const openBookBtn = document.getElementById('openBookBtn');
-const floatBook = document.getElementById('floatBook');
-const modalCancel = document.getElementById('modalCancel');
-const modalSend = document.getElementById('modalSend');
-
-function openModal(){ bookingModal.classList.add('active'); bookingModal.setAttribute('aria-hidden','false'); const focusEl = bookingModal.querySelector('input,select,textarea'); if(focusEl) focusEl.focus(); document.body.style.overflow='hidden'; }
-function closeModal(){ bookingModal.classList.remove('active'); bookingModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-
-openBookBtn && openBookBtn.addEventListener('click', openModal);
-floatBook && floatBook.addEventListener('click', openModal);
-modalCancel && modalCancel.addEventListener('click', closeModal);
-
-modalSend && modalSend.addEventListener('click', ()=> {
-  const name = encodeURIComponent(document.getElementById('b_name').value || '—');
-  const ev = encodeURIComponent(document.getElementById('b_event').value || '—');
-  const date = encodeURIComponent(document.getElementById('b_date').value || '—');
-  const guests = encodeURIComponent(document.getElementById('b_guests').value || '—');
-  const msg = encodeURIComponent(document.getElementById('b_msg').value || '—');
-
-  const text = `New Booking Enquiry%0AName: ${name}%0AEvent: ${ev}%0ADate: ${date}%0AGuests: ${guests}%0ANotes: ${msg}`;
-  const phone = '919462015450';
-  const url = `https://wa.me/${phone}?text=${text}`;
-  window.open(url, '_blank');
-});
-
-/* ---------- Mobile menu (slide-in) ---------- */
-const menuBtn = document.getElementById('menuBtn');
-const mobileNav = document.getElementById('mobileNav');
-const mobileClose = document.getElementById('mobileClose');
-if(menuBtn){
-  menuBtn.addEventListener('click', ()=> { mobileNav.style.display='block'; mobileNav.setAttribute('aria-hidden','false'); menuBtn.setAttribute('aria-expanded','true'); });
-}
-if(mobileClose){
-  mobileClose.addEventListener('click', ()=> { mobileNav.style.display='none'; mobileNav.setAttribute('aria-hidden','true'); menuBtn.setAttribute('aria-expanded','false'); });
-}
-mobileNav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> { mobileNav.style.display='none'; menuBtn.setAttribute('aria-expanded','false'); }));
-
-/* ---------- Smooth scroll for anchors ---------- */
-document.querySelectorAll('a[href^="#"]').forEach(a=> a.addEventListener('click', (e)=> {
-  const href = a.getAttribute('href');
-  if(href.length>1){ e.preventDefault(); const el = document.querySelector(href); if(el) el.scrollIntoView({behavior:'smooth', block:'start'}); }
-}));
-
-/* ---------- keyboard & escape handling ---------- */
-document.addEventListener('keydown', (e)=> {
-  if(e.key === 'Escape'){ if(lightbox.classList.contains('active')) closeLightbox(); if(bookingModal.classList.contains('active')) closeModal(); if(mobileNav.style.display === 'block') { mobileNav.style.display='none'; menuBtn.setAttribute('aria-expanded','false'); } }
-});
-
-/* ---------- Logo fallback (tries variants then shows SVG) ---------- */
-(function logoFallback(){
-  const logo = document.getElementById('siteLogo');
-  const fallback = document.getElementById('logoFallback');
-  if(!logo) return;
-  const variants = ['Palm_logo.PNG','Palm_logo.png','palm_logo.PNG','palm_logo.png','Palm-Logo.PNG','PalmLogo.PNG','logo.png','logo.PNG'];
-  let tried = -1;
-  logo.addEventListener('error', function tryNext(){
-    tried++;
-    if(tried < variants.length){ logo.src = variants[tried]; return; }
-    logo.style.display = 'none';
-    if(fallback) fallback.style.display = 'block';
-    logo.removeEventListener('error', tryNext);
-  });
-  logo.addEventListener('load', ()=> { if(fallback) fallback.style.display = 'none'; });
-})();
-</script>
+    // ---------- keyboard escapes ----------
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape'){
+        if(lightbox.classList.contains('active')) closeLightbox();
+        if(bookingModal.classList.contains('active')) closeModal();
+        if(mobileNav.style.display === 'block') { mobileNav.style.display = 'none'; menuBtn && menuBtn.setAttribute('aria-expanded','false'); }
+      }
+    });
+  </script>
 </body>
 </html>
