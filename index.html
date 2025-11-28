@@ -65,6 +65,18 @@
   color: var(--gold);
   letter-spacing: 0.5px;
 }
+/* Always show heading on desktop */
+.header-inner.has-image .brand-title {
+    display: block;
+}
+
+/* Hide heading on mobile */
+@media (max-width: 480px) {
+    .brand-title {
+        display: none;
+    }
+}
+
 
 /* Laptop / Medium Screens */
 @media (max-width: 980px) {
@@ -195,15 +207,22 @@
       <div style="display:flex;align-items:center;gap:12px;min-width:0">
         <div class="logo-wrap">
           <div class="logo-box">
-            <!-- main image element: JS will try variants and set this src to the working one -->
-            <img id="siteLogo" src="Palm_logo.PNG" alt="The Palm Banquet logo" loading="lazy" style="display:block" />
-            <!-- inline SVG fallback (displayed if no image found) -->
-            <svg id="svgLogo" width="200" height="70" viewBox="0 0 200 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
-              <text x="0" y="36" font-family="Playfair Display, serif" font-size="26" fill="#D4AF37" font-weight="700">THE PALM</text>
-              <text x="0" y="62" font-family="Playfair Display, serif" font-size="18" fill="#D4AF37" font-weight="700">BANQUET</text>
-            </svg>
-          </div>
-          <div class="brand-title" id="brandTitle">THE PALM BANQUET</div>
+    <img id="siteLogo" 
+         src="Palm_logo.PNG" 
+         alt="The Palm Banquet" 
+         style="height:72px; width:auto; display:block;" 
+         onerror="this.style.display='none'; document.getElementById('svgLogo').style.display='block';" />
+
+    <!-- fallback only if PNG fails -->
+    <svg id="svgLogo" width="200" height="70" style="display:none;">
+        <text x="0" y="36" font-family="Playfair Display" font-size="26" fill="#D4AF37" font-weight="700">THE PALM</text>
+        <text x="0" y="62" font-family="Playfair Display" font-size="18" fill="#D4AF37" font-weight="700">BANQUET</text>
+    </svg>
+</div>
+
+<!-- Always show heading on desktop -->
+<div class="brand-title" id="brandTitle">THE PALM BANQUET</div>
+
         </div>
       </div>
 
